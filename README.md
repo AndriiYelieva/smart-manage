@@ -32,8 +32,8 @@ This tutorial will guide you through getting your project up and running from Gi
 
 **Docker**
 
-1.`docker pull andriiyelieva/dzen-code:v1.0`
-2.`docker run -p 3000:3000 [your images-id]`
+1. Use terminal comand`docker pull andriiyelieva/dzen-code:v1.0`  
+2. Open a project from a container with the identifier images `docker run -p 3000:3000 [your images-id]`
 
 ## DEMO LINK
 
