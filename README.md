@@ -21,16 +21,16 @@ In the Orders component output: The ability to add an order, the name of the ord
 This tutorial will guide you through getting your project up and running from GitHub and deploying it to a container using Docker Hub.
 
 
-## Step 1: Clone the repository
+## Launch the project from this repository or container from the docker hub.
 
-git clone https://github.com/your-username/your-project.git
+**This repository**
 
--Replace your-username and your-project with your current data
+1. Clone this repository to your computer `git clone https://github.com/AndriiYelieva/dzen-test-task.git`.
+2. Use `npm install` or `yarn install` to install all project dependencies.
+3. Run the project with `npm run dev` or `yarn dev`.
+4. Open a web browser and go to `http://localhost:3000` to see my application.
 
-## Step 2: Assemble and launch the container
+**Docker**
 
-docker pull andriiyelieva/dzen-code:v1.0
-
-****
-
-docker run -p 3000:3000 [your images-id]
+1.`docker pull andriiyelieva/dzen-code:v1.0`
+2.`docker run -p 3000:3000 [your images-id]`
