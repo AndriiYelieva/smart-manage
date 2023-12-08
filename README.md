@@ -1,0 +1,36 @@
+# Project Components
+
+This project includes several components that contribute to the overall functionality of the application. Each component serves a specific purpose, enhancing the user experience.
+
+## Navigation Menu
+Create a component for navigating through the project
+
+## TopMenu
+Creating a TopMenu component that displays real-time information
+
+## Orders
+In the Orders component output: The ability to add an order, the name of the order, the number of products, creation dates, the amount of income in two currencies and the button to delete the income
+
+## Groups
+ Ability to add an order, order name, number of products, creation dates, also the ability to view products that belong to a certain order, add a product, delete a product
+
+## Getting Started
+
+## Launching a project from GitHub and Docker Hub
+
+This tutorial will guide you through getting your project up and running from GitHub and deploying it to a container using Docker Hub.
+
+
+## Step 1: Clone the repository
+
+git clone https://github.com/your-username/your-project.git
+
+-Replace your-username and your-project with your current data
+
+## Step 2: Assemble and launch the container
+
+docker pull andriiyelieva/dzen-code:v1.0
+
+****
+
+docker run -p 3000:3000 [your images-id]
