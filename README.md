@@ -34,3 +34,7 @@ docker pull andriiyelieva/dzen-code:v1.0
 ****
 
 docker run -p 3000:3000 [your images-id]
+
+## DEMO LINK
+
+**https://andriiyelieva.github.io/dzen-test-task/**
