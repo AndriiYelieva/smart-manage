@@ -1,0 +1,96 @@
+.delete {
+  &__title {
+    display: flex;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    flex-direction: column;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgb(128, 128, 128, 0.3);
+    width: 100%;
+    
+    &__status {
+      background-color: yellowgreen;
+      border-radius: 50%;
+      height: 15px;
+      width: 15px;
+
+      margin-left: 20px;
+    }
+
+    &__about {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    height: 100px;
+    background: yellowgreen;
+    justify-content: flex-end;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__cancel {
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: #fff;
+    transition: all 0.4s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &__delete {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin: 20px;
+    padding: 0;
+    color: #F00;
+    width: 150px;
+    border-radius: 40px;
+    transition: all 0.4s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+  }
+
+  &__icon {
+    margin-right: 8px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: none;
+
+    background-image: url('../../../public/img/trashNotification.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__close {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+  }
+}

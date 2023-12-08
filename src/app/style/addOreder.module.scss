@@ -1,0 +1,62 @@
+.add {
+  &__title {
+    display: flex;
+    background: #fff;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+    flex-direction: column;
+  }
+
+  &__buttons {
+    display: flex;
+    height: 100px;
+    background: yellowgreen;
+    justify-content: flex-end;
+    border-radius: 0 0 10px 10px;
+  }
+
+  &__cancel {
+    font-weight: 600;
+    background: none;
+    border: none;
+    color: #fff;
+    transition: all 0.4s;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &__add {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin: 20px;
+    padding: 0;
+    color: yellowgreen;
+    width: 150px;
+    border-radius: 40px;
+    transition: all 0.4s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+  }
+
+  &__close {
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(50%, -50%);
+  }
+}
