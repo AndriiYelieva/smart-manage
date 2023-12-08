@@ -34,3 +34,7 @@ This tutorial will guide you through getting your project up and running from Gi
 
 1.`docker pull andriiyelieva/dzen-code:v1.0`
 2.`docker run -p 3000:3000 [your images-id]`
+
+## DEMO LINK
+
+`https://andriiyelieva.github.io/dzen-test-task/`
