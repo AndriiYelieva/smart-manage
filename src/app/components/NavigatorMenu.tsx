@@ -4,7 +4,7 @@ import Link from "next/link"
 import clsx from 'clsx';
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-
+import { BASEURL } from '../variables/BaseUrlForImage';
 
 export const NavigationMenu = () => {
   const names = ['orders', 'groups', 'products', 'users', 'setting']
@@ -15,9 +15,9 @@ export const NavigationMenu = () => {
       <nav className="col-2 shadow">
         <ul>
           <li className="mt-5 mb-5 text-uppercase list-unstyled d-flex justify-content-center position-relative">
-            <img loading="lazy" src='/img/user.svg' alt="Icon" width={100} height={100} />
+            <img loading="lazy" src={`${BASEURL}img/user.svg`} alt="Icon" width={100} height={100} />
             <button className="position-absolute bottom-0 end-50 rounded-circle border-0">
-              <img loading="lazy" src='/img/gear-fill.svg' alt="Icon" width={20} height={30} />
+              <img loading="lazy" src={`${BASEURL}img/gear-fill.svg`} alt="Icon" width={20} height={30} />
             </button>
           </li>
 
