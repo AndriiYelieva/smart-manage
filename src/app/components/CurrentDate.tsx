@@ -15,7 +15,6 @@ export default function CurrentDate() {
     return () => clearInterval(intervalId);
   }, []);
 
-
   const hours = currentTime.getHours();
   let minutes = currentTime.getMinutes();
   const year = currentTime.getFullYear();
@@ -30,7 +29,6 @@ export default function CurrentDate() {
       </div>
       <div className="date-time-block text-end">
         <p>{`${date} ${monthArr[monthId]} ${year} 🕓 ${hours}:${minutes < 10 ? '0' + minutes : minutes}`}</p>
-
       </div>
     </>
   )
