@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import style from '@/app/page.module.css'
 import CurrentDate from './CurrentDate';
-import { BASEURL } from '../variables/BaseUrlForImage';
 
 export const TopMenu = () => {
   return (
@@ -10,7 +9,7 @@ export const TopMenu = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-5 d-flex align-items-center">
-              <img src={`${BASEURL}img/user-header.svg`} alt="Icon" width={50} height={50} />
+              <img src="../../../public/img/user-header.svg" alt="Icon" width={50} height={50} />
               <p className="m-4 text-success font-weight-bold">INVENTORY</p>
               <div className="input-group">
                 <input type="text" className="form-control rounded" placeholder="Search.." />
