@@ -4,9 +4,6 @@ import Link from "next/link"
 import clsx from 'clsx';
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import {  } from "../../../public/img/gear-fill.svg";
-// import {  } from ".";
-
 export const NavigationMenu = () => {
   const names = ['orders', 'groups', 'products', 'users', 'setting']
   const pathname = usePathname();
@@ -16,9 +13,9 @@ export const NavigationMenu = () => {
       <nav className="col-2 shadow">
         <ul>
           <li className="mt-5 mb-5 text-uppercase list-unstyled d-flex justify-content-center position-relative">
-            <img loading="lazy" src="../../../public/img/user.svg" alt="Icon" width={100} height={100} />
+            <Image loading="lazy" src="/user.svg" alt="Icon" width={100} height={100} />
             <button className="position-absolute bottom-0 end-50 rounded-circle border-0">
-              <img loading="lazy" src="../../../public/img/gear-fill.svg" alt="Icon" width={20} height={30} />
+              <Image loading="lazy" src="/gear-fill.svg" alt="Icon" width={20} height={30} />
             </button>
           </li>
 

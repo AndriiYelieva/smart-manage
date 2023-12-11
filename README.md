@@ -35,6 +35,4 @@ This tutorial will guide you through getting your project up and running from Gi
 1. Use terminal comand`docker pull andriiyelieva/dzen-code:v1.0`  
 2. Open a project from a container with the identifier images `docker run -p 3000:3000 [your images-id]`
 
-## DEMO LINK
-
-`https://andriiyelieva.github.io/dzen-test-task/`
+## DEMO LINK - https://dzen-test-task.vercel.app/
