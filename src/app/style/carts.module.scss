@@ -18,7 +18,7 @@
     width: 42px;
     border-radius: 50%;
 
-    background-image: url('../../../public/img/listUL.svg');
+    background-image: url('/listUL.svg');
     background-repeat: no-repeat;
     background-color: #fff;
     background-position: center;
@@ -30,7 +30,7 @@
     background-color: #fff;
     border: none;
     
-    background-image: url('../../../public/img/trash.svg');
+    background-image: url('/trash.svg');
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -45,7 +45,7 @@
 
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../../../public//img//right-arrow.svg');
+  background-image: url('/right-arrow.svg');
 }
 
 .button {
