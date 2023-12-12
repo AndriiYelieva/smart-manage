@@ -21,12 +21,14 @@ const ProductCart: React.FC<Props> = ({
   const prepareGuarantee = (date: string, dateValue: string): string => {
     const startWord = dateValue === 'end' ? 'to' : 'from';
 
-    const onlyDate = date.split(' ').slice(0, 1).join();
+
+    const onlyDate = date.length > 10 ? date.split(' ').slice(0, 1).join() : date;
 
     return `${startWord} ${onlyDate}`;
   };
 
-  console.log(product.guarantee.start);
+  console.log('product.guarantee.start', product.guarantee.start);
+  console.log('product.guarantee.start.length', product.guarantee.start.length);
   
 
   return (
@@ -56,6 +58,8 @@ const ProductCart: React.FC<Props> = ({
         </p>
         <div className={style.product__tax}>
           <div className={style.product__tax__guarantee}>
+            {/* <p className="m-0">{product.guarantee.start.length}</p>
+            <p className="m-0">{product.guarantee.end}</p> */}
             <p className="m-0">{product.guarantee?.start !== undefined ? prepareGuarantee(product.guarantee.start, 'start') : '-'}</p>
             <p className="m-0">{product.guarantee?.end !== undefined ? prepareGuarantee(product.guarantee.end, 'end') : '-'}</p>
           </div>

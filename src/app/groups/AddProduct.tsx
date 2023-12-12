@@ -15,7 +15,6 @@ type Props = {
 const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
   const [inputName, setInputName] = useState('');
   const [inputTitle, setInputTitle] = useState('');
-  const [inputType, setInputType] = useState('');
   const [inputPhoto, setInputPhoto] = useState('');
   const [inputUSD, setInputUSD] = useState('');
   const [inputUAH, setInputUAH] = useState('');
@@ -25,8 +24,8 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
   const [guaranteeEnd, setGuaranteeEnd] = useState('');
 
   const dispatch = useAppDispatch();
-  const validForm = !!inputTitle.trim() && inputType !== 'none'
-    && !!inputUSD.trim() && !!inputPhoto.trim() && !!inputUAH.trim() && !!typeProduct
+  const validForm = !!inputTitle.trim() && !!inputUSD.trim()
+    && !!inputPhoto.trim() && !!inputUAH.trim() && typeProduct  !== 'none'
     && specificationProduct !== 'none' && !!guaranteeStart && !!guaranteeEnd
 
   const formattedDate = () => {
@@ -34,16 +33,12 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
       .replace(/(\d+)\/(\d+)\/(\d+),/, '$3-$2-$1')
       .replace(/,/, '')
   };
-  console.log('!!inputType', inputType !== 'none');
 
-  console.log('!!inputUSD.trim()', !!inputUSD.trim());
-  console.log('inputPhoto.trim()', !!inputPhoto.trim());
-  console.log('!!inputUAH.trim()', !!inputUAH.trim());
-  console.log('!!typeProduct', !!typeProduct);
-  console.log('!!specificationProduct', !!specificationProduct);
-  console.log('!!guaranteeStart', !!guaranteeStart);
-  console.log('!!guaranteeEnd', !!guaranteeEnd);
-  
+  // console.log('specificationProduct', specificationProduct);
+  // console.log('typeProduct', guaranteeStart);
+  console.log('guaranteeStart', guaranteeStart);
+  console.log('guaranteeEnd.length', guaranteeEnd.length);
+
 
 
   //sectoin handly
@@ -59,10 +54,10 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
     setInputTitle(value);
   };
 
-  const handleType: React.ChangeEventHandler<HTMLInputElement> = (event) => {
+  const handleTypeProduct: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const { value } = event.currentTarget;
 
-    setInputType(value);
+    setTypeProduct(value);
   };
 
   const handlePhoto: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -99,6 +94,8 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
     const inputDate = event.target.value;
 
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+    // console.log(inputDate.toString());
 
     if (dateRegex.test(inputDate)) {
       setGuaranteeStart(inputDate);
@@ -142,12 +139,11 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
     };
 
     product.name = inputName;
+    product.photo = inputPhoto;
     product.title = inputTitle;
     product.type = typeProduct;
-    product.type = inputType;
-    product.guarantee.start = '';
-    product.guarantee.end = '';
-    product.photo = inputPhoto;
+    product.guarantee.start = guaranteeStart.toString();
+    product.guarantee.end = guaranteeEnd.toString();
     product.price[0].value = +inputUSD;
     product.price[1].value = +inputUAH;
     product.order = orderId
