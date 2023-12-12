@@ -4,6 +4,11 @@ type Price = {
   isDefault?: number;
 }
 
+type Guarantee = {
+  start: string;
+  end: string;
+}
+
 export type Product = {
   id: number;
   name: string;
@@ -11,7 +16,9 @@ export type Product = {
   photo: string;
   title: string;
   type: string;
-  price: Price[],
+  guarantee: Guarantee;
+  price: Price[];
   order: number;
   date: string;
+  status: string;
 }

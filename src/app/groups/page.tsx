@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
+
 import { useState } from 'react';
 import { useAppSelector } from '@/redux/hooks';
 import style from '@/app/style/groups.module.scss';
@@ -8,7 +9,7 @@ import OrdersList from './OrdersList';
 import ProductsList from './ProductsList';
 import AddOrderInGroup from './AddOrderInGroup';
 import AddProduct from './AddProduct';
-import DeleteProduct from './DeleteProduct';
+import DeleteProduct from '../components/DeleteProduct';
 
 export default function Groups() {
   const orders = useAppSelector(state => state.orders);
@@ -34,7 +35,7 @@ export default function Groups() {
                 +
               </button>
             </div>
-            <h1 className="m-0 ms-3">Groups</h1>
+            <h1 className="m-0 ms-3">{`Groups / ${orders.length}`}</h1>
           </div>
 
           <section className="row">
@@ -77,8 +78,6 @@ export default function Groups() {
               setShowDeleteProduct={setShowDeleteProduct}
             />
           )}
-
-          {}
         </div>
       </section >
 

@@ -29,7 +29,7 @@ export default function Parish() {
                 +
               </button>
             </div>
-            <h1 className="m-0 ms-3">Orders</h1>
+            <h1 className="m-0 ms-3">{`Orders / ${orders.length}`}</h1>
           </div>
 
           <section className="row list">

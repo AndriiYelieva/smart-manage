@@ -16,6 +16,7 @@ export default function Home() {
     dispatch(productsAction.initProducts(products));
     dispatch(ordersAction.initOrders(orders));
   }
+
   return (
     <h1 className="m-auto">DzenCode test task</h1>
   )
