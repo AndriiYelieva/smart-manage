@@ -1,6 +1,7 @@
-import style from "@/app/style/carts.module.scss";
 import { useAppSelector } from "@/redux/hooks";
 import { Order } from "@/Type/Order";
+
+import style from "@/app/style/carts.module.scss";
 
 type Props = {
   setShowList: (v: boolean) => void,
@@ -34,7 +35,6 @@ const OrdersList: React.FC<Props> = ({ setShowList, order, orderId, setOrderId }
             <p className="m-0">Products</p>
           </div>
           <div className="text-center col-6">
-            {/* <p className="m-0 mx-auto d-inline-block">{`${4} / ${12}`}</p> */}
             <p className="m-0 mx-auto">{order.date}</p>
           </div>
 

@@ -2,10 +2,11 @@
 import { useState } from 'react'
 import { useAppDispatch } from '@/redux/hooks';
 
-import style from '@/app/style/addProduct.module.scss';
 import * as productAction from '@/redux/features/productSlice';
 import { SortByType } from '@/Type/SortByType';
 import { SortBySpecification } from '@/Type/SortBySpecification';
+
+import style from '@/app/style/addProduct.module.scss';
 
 type Props = {
   setShowAddProduct: (v: boolean) => void;
@@ -33,13 +34,6 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
       .replace(/(\d+)\/(\d+)\/(\d+),/, '$3-$2-$1')
       .replace(/,/, '')
   };
-
-  // console.log('specificationProduct', specificationProduct);
-  // console.log('typeProduct', guaranteeStart);
-  console.log('guaranteeStart', guaranteeStart);
-  console.log('guaranteeEnd.length', guaranteeEnd.length);
-
-
 
   //sectoin handly
   const handleName: React.ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -94,8 +88,6 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
     const inputDate = event.target.value;
 
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
-
-    // console.log(inputDate.toString());
 
     if (dateRegex.test(inputDate)) {
       setGuaranteeStart(inputDate);

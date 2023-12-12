@@ -1,13 +1,13 @@
 'use client'
 import { useState } from 'react';
-import style from '@/app/style/orders.module.scss';
+import { useAppSelector } from '@/redux/hooks';
 
 import CartOrders from './CartOrders';
-import { useAppSelector } from '@/redux/hooks';
 import DeleteOrder from './DeleteOrder';
-import { Order } from '@/Type/Order';
 import AddOrder from './AddOrder';
+import { Order } from '@/Type/Order';
 
+import style from '@/app/style/orders.module.scss';
 
 export default function Parish() {
   const orders = useAppSelector(state => state.orders);

@@ -1,8 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react'
-import style from '@/app/style/addOreder.module.scss';
 import { useAppDispatch } from '@/redux/hooks';
 import * as ordersAction from '@/redux/features/orderSlice';
+
+import style from '@/app/style/addOreder.module.scss';
 
 type Props = {
   setShowAddOrder: (v: boolean) => void,

@@ -1,15 +1,15 @@
-/* eslint-disable @next/next/no-img-element */
 "use client"
 
 import { useState } from 'react';
 import { useAppSelector } from '@/redux/hooks';
-import style from '@/app/style/groups.module.scss';
 
 import OrdersList from './OrdersList';
 import ProductsList from './ProductsList';
 import AddOrderInGroup from './AddOrderInGroup';
 import AddProduct from './AddProduct';
 import DeleteProduct from '../components/DeleteProduct';
+
+import style from '@/app/style/groups.module.scss';
 
 export default function Groups() {
   const orders = useAppSelector(state => state.orders);

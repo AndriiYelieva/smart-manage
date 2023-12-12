@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import style from '@/app/style/deleteOrder.module.scss';
 import { useAppDispatch } from '@/redux/hooks';
 import * as ordersAction from '@/redux/features/orderSlice';
 import { Order } from '@/Type/Order';
+
+import style from '@/app/style/deleteOrder.module.scss';
 
 type Props = {
   orderDelete: Order;

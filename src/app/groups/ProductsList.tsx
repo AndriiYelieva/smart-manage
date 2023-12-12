@@ -1,6 +1,7 @@
-import style from '@/app/style/groups.module.scss';
-import ProductCart from "./ProductCart"
 import { useAppSelector } from '@/redux/hooks';
+import ProductCart from "./ProductCart"
+
+import style from '@/app/style/groups.module.scss';
 
 type Props = {
   setShowList: (v: boolean) => void;

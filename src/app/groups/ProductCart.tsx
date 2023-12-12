@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { Product } from '@/Type/Product';
+
 import style from '@/app/style/groups.module.scss';
 
 type Props = {
