@@ -1,4 +1,4 @@
 export enum SortBySpecification {
-  NEW = 'new',
-  USED = 'used',
+  NEW = 'New',
+  USED = 'Used',
 }

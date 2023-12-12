@@ -20,5 +20,5 @@ export type Product = {
   price: Price[];
   order: number;
   date: string;
-  status: string;
+  specification: string;
 }

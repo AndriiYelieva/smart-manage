@@ -7,7 +7,7 @@ import { useAppSelector } from '@/redux/hooks';
 import style from '../style/products.module.scss';
 
 import Dropdowns from './Dropdowns';
-import CartProduct from './CartProduct';
+import ProductCart from './ProductCart';
 import DeleteProduct from '../components/DeleteProduct';
 import { Product } from '@/Type/Product';
 
@@ -27,7 +27,7 @@ export default function Products() {
     if (typeParam !== 'none') {
       readyProducts = readyProducts.filter(product => product.type === typeParam);
     } if (specParam !== 'none') {
-      readyProducts = readyProducts.filter(product => product.status === specParam);
+      readyProducts = readyProducts.filter(product => product.specification === specParam);
     }
 
     return readyProducts;
@@ -41,7 +41,7 @@ export default function Products() {
 
   return (
     <>
-      <div className="container position-relative page">
+      <div className="position-relative page col-10 ps-5">
         <div className={style.content}>
           <Dropdowns
             typeParam={typeParam}
@@ -50,11 +50,11 @@ export default function Products() {
           />
 
           {readyProducts.length !== 0 ? (
-            <section className="row list">
-              <ul className="h-75 col-12 ps-5 border-black">
+            <section className="row">
+              <ul className="h-75 border-black list">
                 {readyProducts.map(product => {
                   return (
-                    <CartProduct
+                    <ProductCart
                       product={product}
                       setShowDeleteProduct={setShowDeleteProduct}
                       setProductId={setProductId}
@@ -95,7 +95,7 @@ export default function Products() {
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3) !important;
           }
           .list {
-            max-height: 500px;
+            max-height: 450px;
             max-width: 1200px;
             overflow: auto;
           }

@@ -11,7 +11,9 @@ type Props = {
 const ProductCart: React.FC<Props> = ({ product, setProductId, setShowDeleteProduct }) => {
   return (
     <li className={style.cart}>
-      <div className={style.cart__status} />
+      <div className={style.cart__status}
+        style={product.specification === 'New' ? { backgroundColor: '#CAE331' } : { backgroundColor: '#6D6D6D' }}
+      />
       <img
         className="object-fit-cover"
         src={product.photo}
@@ -22,7 +24,12 @@ const ProductCart: React.FC<Props> = ({ product, setProductId, setShowDeleteProd
       <div className={style.cart__about}>
         <p className="m-0">{product.name}</p>
       </div>
-      <p className="m-0 p-0">free</p>
+      <p
+        className="m-0 p-0 col-1"
+        style={product.specification === 'New' ? { color: '#CAE331' } : { color: '#000' }}
+      >
+        {product.specification === 'New' ? 'free' : 'under repair'}
+      </p>
       <button
         type="button"
         className={style.cart__trash}

@@ -17,9 +17,9 @@ export default function Parish() {
   const [orderDelete, setOrderDelete] = useState<Order>(orders[0]);
   return (
     <>
-      <div className="container position-relative">
+      <section className="position-relative col-10 ps-5">
         <div className={style.content}>
-          <div className="dropdowns ps-4 mt-5 mb-3 d-flex align-items-center">
+          <div className="dropdowns my-5 d-flex align-items-center">
             <div className={style.wrapper}>
               <button
                 type="button"
@@ -33,7 +33,7 @@ export default function Parish() {
           </div>
 
           <section className="row list">
-            <ul className="h-75 col-12 ps-5">
+            <ul className="h-75 col-12">
               {orders.map(order => <CartOrders
                 key={order.id}
                 setShowDeleteMessage={setShowDeleteMessage}
@@ -54,7 +54,7 @@ export default function Parish() {
             )}
           </section>
         </div>
-      </div >
+      </section >
 
       <style>{`
           .cart {

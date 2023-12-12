@@ -1,9 +1,11 @@
 "use client"
-/* eslint-disable @next/next/no-img-element */
 import { useState } from 'react'
 import { useAppDispatch } from '@/redux/hooks';
+
 import style from '@/app/style/addProduct.module.scss';
 import * as productAction from '@/redux/features/productSlice';
+import { SortByType } from '@/Type/SortByType';
+import { SortBySpecification } from '@/Type/SortBySpecification';
 
 type Props = {
   setShowAddProduct: (v: boolean) => void;
@@ -17,17 +19,34 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
   const [inputPhoto, setInputPhoto] = useState('');
   const [inputUSD, setInputUSD] = useState('');
   const [inputUAH, setInputUAH] = useState('');
+  const [typeProduct, setTypeProduct] = useState('none');
+  const [specificationProduct, setSpecificationProduct] = useState('none');
+  const [guaranteeStart, setGuaranteeStart] = useState('');
+  const [guaranteeEnd, setGuaranteeEnd] = useState('');
+
   const dispatch = useAppDispatch();
-  const validForm = !!inputName.trim() && !!inputTitle.trim() && !!inputType
-    && !!inputUSD.trim() && !!inputPhoto.trim() && !!inputUAH.trim()
+  const validForm = !!inputTitle.trim() && inputType !== 'none'
+    && !!inputUSD.trim() && !!inputPhoto.trim() && !!inputUAH.trim() && !!typeProduct
+    && specificationProduct !== 'none' && !!guaranteeStart && !!guaranteeEnd
 
   const formattedDate = () => {
     return new Date().toLocaleString('en-GB', { timeZone: 'Europe/Kiev' })
       .replace(/(\d+)\/(\d+)\/(\d+),/, '$3-$2-$1')
       .replace(/,/, '')
   };
+  console.log('!!inputType', inputType !== 'none');
 
-  // sectoin handly
+  console.log('!!inputUSD.trim()', !!inputUSD.trim());
+  console.log('inputPhoto.trim()', !!inputPhoto.trim());
+  console.log('!!inputUAH.trim()', !!inputUAH.trim());
+  console.log('!!typeProduct', !!typeProduct);
+  console.log('!!specificationProduct', !!specificationProduct);
+  console.log('!!guaranteeStart', !!guaranteeStart);
+  console.log('!!guaranteeEnd', !!guaranteeEnd);
+  
+
+
+  //sectoin handly
   const handleName: React.ChangeEventHandler<HTMLInputElement> = (event) => {
     const { value } = event.currentTarget;
 
@@ -64,6 +83,43 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
     setInputUAH(value);
   };
 
+  const handleChangeType = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = event.target.value;
+
+    setTypeProduct(selectedValue)
+  };
+
+  const handleChangeSpecification = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedValue = event.target.value;
+
+    setSpecificationProduct(selectedValue)
+  };
+
+  const handleChangeGuaranteeStart = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputDate = event.target.value;
+
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if (dateRegex.test(inputDate)) {
+      setGuaranteeStart(inputDate);
+    } else {
+      console.error('Incorrect date format');
+    }
+  };
+
+  const handleChangeGuaranteeEnd = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputDate = event.target.value;
+
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+
+    if (dateRegex.test(inputDate)) {
+      setGuaranteeEnd(inputDate);
+    } else {
+      console.error('Incorrect date format');
+    }
+  };
+
+
   const createOrder = () => {
     const product = {
       id: Math.floor(Math.random() * 1000),
@@ -72,22 +128,31 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
       photo: '',
       title: '',
       type: '',
+      guarantee: {
+        start: '2017-06-29 12:09:33',
+        end: '2017-06-29 12:09:33'
+      },
       price: [
         { value: 190, symbol: 'USD', },
         { value: 3200, symbol: 'UAH', }
       ],
       order: 0,
-      date: ''
+      date: '',
+      specification: '',
     };
 
     product.name = inputName;
     product.title = inputTitle;
+    product.type = typeProduct;
     product.type = inputType;
+    product.guarantee.start = '';
+    product.guarantee.end = '';
     product.photo = inputPhoto;
     product.price[0].value = +inputUSD;
     product.price[1].value = +inputUAH;
     product.order = orderId
     product.date = formattedDate();
+    product.specification = specificationProduct;
 
     dispatch(productAction.addProduct(product))
     setShowAddProduct(false);
@@ -99,7 +164,7 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
         <div className="notification position-relative w-50">
           <div className={style.add__title}>
             <div className="row m-2">
-              <label htmlFor="name" className="col-4 mb-4">Set name:
+              <label htmlFor="name" className="col-4">Set name:
                 <input
                   value={inputName}
                   onChange={handleName}
@@ -109,7 +174,7 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
                   id="name"
                 />
               </label>
-              <label htmlFor="title" className="col-4 mb-4">Set title:
+              <label htmlFor="title" className="col-4">Set title:
                 <input
                   value={inputTitle}
                   onChange={handleTitle}
@@ -117,16 +182,6 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
                   className="form-control"
                   placeholder="Title"
                   id="title"
-                />
-              </label>
-              <label htmlFor="type" className="col-4 mb-4">Set type:
-                <input
-                  value={inputType}
-                  onChange={handleType}
-                  type="type"
-                  className="form-control"
-                  placeholder="Type"
-                  id="type"
                 />
               </label>
               <label htmlFor="photo" className="col-4">Set photo:
@@ -139,24 +194,67 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
                   id="photo"
                 />
               </label>
-              <label htmlFor="USD" className="col-4">Price USD:
+              <label htmlFor="type" className="col-4 my-4">Set type:
+                <select
+                  value={typeProduct}
+                  onChange={handleChangeType}
+                  className="form-control"
+                  data-cy="paginationLeft"
+                >
+                  <option defaultValue="default" disabled >none</option>
+                  <option value={SortByType.MOTHERBOARD}>{SortByType.MOTHERBOARD}</option>
+                  <option value={SortByType.GRAPHIC_CARD}>{SortByType.GRAPHIC_CARD}</option>
+                  <option value={SortByType.MONITORS}>{SortByType.MONITORS}</option>
+                </select>
+              </label>
+              <label htmlFor="USD" className="col-4 my-4">Price USD:
                 <input
                   value={inputUSD}
                   onChange={handleUSD}
-                  type="text"
+                  type="number"
                   className="form-control"
                   placeholder="USD"
                   id="USD"
                 />
               </label>
-              <label htmlFor="UAH" className="col-4">Price UAH:
+              <label htmlFor="UAH" className="col-4 my-4">Price UAH:
                 <input
                   value={inputUAH}
                   onChange={handleUAH}
-                  type="type"
+                  type="number"
                   className="form-control"
                   placeholder="UAH"
                   id="UAH"
+                />
+              </label>
+              <label htmlFor="Specification" className="col-4">Specification:
+                <select
+                  value={specificationProduct}
+                  onChange={handleChangeSpecification}
+                  className="form-control"
+                  id="Specification"
+                >
+                  <option defaultValue="default" disabled >none</option>
+                  <option value={SortBySpecification.NEW}>{SortBySpecification.NEW}</option>
+                  <option value={SortBySpecification.USED}>{SortBySpecification.USED}</option>
+                </select>
+              </label>
+              <label htmlFor="GuaranteeStart" className="col-4">Guarantee start:
+                <input
+                  value={guaranteeStart}
+                  onChange={handleChangeGuaranteeStart}
+                  type="date"
+                  className="form-control"
+                  id="GuaranteeStart"
+                />
+              </label>
+              <label htmlFor="GuaranteeEnd" className="col-4">Guarantee end:
+                <input
+                  value={guaranteeEnd}
+                  onChange={handleChangeGuaranteeEnd}
+                  type="date"
+                  className="form-control"
+                  id="GuaranteeEnd"
                 />
               </label>
             </div>
@@ -201,3 +299,7 @@ const AddProduct: React.FC<Props> = ({ setShowAddProduct, orderId }) => {
 };
 
 export default AddProduct;
+
+function moment(timeStamp: any) {
+  throw new Error('Function not implemented.');
+}

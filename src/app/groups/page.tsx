@@ -23,9 +23,9 @@ export default function Groups() {
 
   return (
     <>
-      <section className="container page position-relative overflow-hidden">
+      <section className="page position-relative overflow-hidden col-10 ps-5">
         <div className={style.content}>
-          <div className="dropdowns ps-4 mt-5 mb-3 d-flex align-items-center">
+          <div className="dropdowns my-5 d-flex align-items-center">
             <div className={style.wrapper}>
               <button
                 type="button"
@@ -39,7 +39,7 @@ export default function Groups() {
           </div>
 
           <section className="row">
-            <ul className="h-75 col-4 ps-5 content">
+            <ul className="h-75 col-4 content">
               {orders.map(order => <OrdersList
                 key={order.id}
                 order={order}
@@ -96,7 +96,6 @@ export default function Groups() {
             max-height: 500px;
             overflow: auto;
           }
-
         `}</style>
     </>
   )

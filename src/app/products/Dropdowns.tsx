@@ -29,8 +29,8 @@ const Dropdowns: React.FC<Props> = ({
   };
 
   return (
-    <div className="dropdowns ps-4 my-5 d-flex align-items-center">
-      <h1 className="m-0 ms-3">{`Orders / ${productsLength}`}</h1>
+    <div className="dropdowns my-5 d-flex align-items-center">
+      <h1 className="m-0">{`Products / ${productsLength}`}</h1>
       <div className="d-flex p-0 mx-4 align-items-center">
         <p className="m-0 p-0">Type:</p>
         <select

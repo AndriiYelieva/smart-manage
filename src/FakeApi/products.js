@@ -16,7 +16,7 @@ export const products = [
     ],
     order: 1,
     date: '2017-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const products = [
     ],
     order: 2,
     date: '2017-06-29 12:09:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 3,
@@ -54,7 +54,7 @@ export const products = [
     ],
     order: 4,
     date: '2023-12-01 11:11:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 4,
@@ -73,7 +73,7 @@ export const products = [
     ],
     order: 4,
     date: '2023-12-01 11:11:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 5,
@@ -92,7 +92,7 @@ export const products = [
     ],
     order: 4,
     date: '2023-12-01 11:11:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 6,
@@ -111,7 +111,7 @@ export const products = [
     ],
     order: 3,
     date: '2017-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 7,
@@ -130,7 +130,7 @@ export const products = [
     ],
     order: 3,
     date: '2017-06-29 12:09:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 8,
@@ -149,7 +149,7 @@ export const products = [
     ],
     order: 2,
     date: '2017-06-29 12:09:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 9,
@@ -168,7 +168,7 @@ export const products = [
     ],
     order: 1,
     date: '2017-06-29 12:09:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 10,
@@ -187,7 +187,7 @@ export const products = [
     ],
     order: 4,
     date: '2017-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 11,
@@ -206,7 +206,7 @@ export const products = [
     ],
     order: 1,
     date: '2022-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 12,
@@ -225,7 +225,7 @@ export const products = [
     ],
     order: 1,
     date: '2022-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 13,
@@ -244,7 +244,7 @@ export const products = [
     ],
     order: 3,
     date: '2022-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 14,
@@ -263,7 +263,7 @@ export const products = [
     ],
     order: 1,
     date: '2022-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 15,
@@ -282,7 +282,7 @@ export const products = [
     ],
     order: 2,
     date: '2021-12-29 12:09:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 16,
@@ -301,7 +301,7 @@ export const products = [
     ],
     order: 4,
     date: '2017-12-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 17,
@@ -320,7 +320,7 @@ export const products = [
     ],
     order: 4,
     date: '2014-01-16 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 18,
@@ -339,7 +339,7 @@ export const products = [
     ],
     order: 4,
     date: '2015-08-29 12:09:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 19,
@@ -362,7 +362,7 @@ export const products = [
     ],
     order: 4,
     date: '2022-08-29 12:09:33',
-    status: 'used',
+    specification: 'Used',
   },
   {
     id: 20,
@@ -381,7 +381,7 @@ export const products = [
     ],
     order: 4,
     date: '2017-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 21,
@@ -400,7 +400,7 @@ export const products = [
     ],
     order: 4,
     date: '202-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   },
   {
     id: 22,
@@ -419,6 +419,6 @@ export const products = [
     ],
     order: 2,
     date: '2017-06-29 12:09:33',
-    status: 'new',
+    specification: 'New',
   }
 ]

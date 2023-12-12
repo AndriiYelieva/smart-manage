@@ -1,8 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 "use client"
-import style from '@/app/style/products.module.scss';
 import { useAppSelector } from '@/redux/hooks';
 import { Product } from '@/Type/Product';
+
+import style from '@/app/style/products.module.scss';
 
 type Props = {
   product: Product;
@@ -10,7 +11,7 @@ type Props = {
   setShowDeleteProduct: (v: boolean) => void;
 }
 
-const CartProduct: React.FC<Props> = ({
+const ProductCart: React.FC<Props> = ({
   product,
   setProductId,
   setShowDeleteProduct,
@@ -25,13 +26,16 @@ const CartProduct: React.FC<Props> = ({
     return `${startWord} ${onlyDate}`;
   };
 
+  console.log(product.guarantee.start);
+  
+
   return (
     <>
       <li className={style.product}>
         <div className={style.product__status}>
           <div
             className={style.product__status__circle}
-            style={product.status !== 'new' ? { backgroundColor: '#6D6D6D' } : { backgroundColor: '#CAE331' }}
+            style={product.specification === 'New' ? { backgroundColor: '#CAE331' } : { backgroundColor: '#6D6D6D' }}
           />
           <img
             className="object-fit-cover"
@@ -46,9 +50,9 @@ const CartProduct: React.FC<Props> = ({
         </div>
         <p
           className="m-0 p-0 col-1"
-          style={product.status !== 'new' ? { color: '#000' } : { color: '#CAE331' }}
+          style={product.specification === 'New' ? { color: '#CAE331' } : { color: '#000' }}
         >
-          {product.status === 'new' ? 'free' : 'under repair'}
+          {product.specification === 'New' ? 'free' : 'under repair'}
         </p>
         <div className={style.product__tax}>
           <div className={style.product__tax__guarantee}>
@@ -61,7 +65,7 @@ const CartProduct: React.FC<Props> = ({
           </div>
         </div>
         <div className={style.product__orderName}>
-          <p className="m-0 p-0 col-1 mx-4">{product.status}</p>
+          <p className="m-0 p-0 col-1 mx-4">{product.specification}</p>
           <p className="m-0 text-decoration-underline">{currentOrder?.description}</p>
         </div>
         <div className={style.product__date}>
@@ -81,4 +85,4 @@ const CartProduct: React.FC<Props> = ({
   )
 }
 
-export default CartProduct;
+export default ProductCart;
