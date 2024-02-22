@@ -18,6 +18,6 @@ export default function Home() {
   }
 
   return (
-    <h1 className="m-auto">DzenCode test task</h1>
+    <h1 className="m-auto">{`Welcome to the "Smart manage"`}</h1>
   )
 }

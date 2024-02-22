@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
 import Link from "next/link"
 import clsx from 'clsx';
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 export const NavigationMenu = () => {
-  const names = ['orders', 'groups', 'products', 'users', 'setting']
+  const names = ['orders', 'groups', 'products', 'users']
   const pathname = usePathname();
 
   return (

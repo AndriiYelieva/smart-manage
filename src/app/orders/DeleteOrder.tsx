@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { useAppDispatch } from '@/redux/hooks';
 import * as ordersAction from '@/redux/features/orderSlice';
 import { Order } from '@/Type/Order';

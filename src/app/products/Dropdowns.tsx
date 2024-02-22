@@ -6,9 +6,9 @@ import { SortBySpecification } from "@/Type/SortBySpecification";
 import { SortByType } from "@/Type/SortByType";
 
 type Props = {
-  productsLength: number;
-  specParam: string;
-  typeParam: string;
+  productsLength: number,
+  specParam: string,
+  typeParam: string,
 }
 
 const Dropdowns: React.FC<Props> = ({
@@ -30,7 +30,7 @@ const Dropdowns: React.FC<Props> = ({
 
   return (
     <div className="dropdowns my-5 d-flex align-items-center">
-      <h1 className="m-0">{`Products / ${productsLength}`}</h1>
+      {productsLength !== 0 ? <h1 className="m-0"> {`Products / ${productsLength}`}</h1>:  <h1 className="m-0">Products / 0</h1>}
       <div className="d-flex p-0 mx-4 align-items-center">
         <p className="m-0 p-0">Type:</p>
         <select

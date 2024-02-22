@@ -16,23 +16,11 @@ In the Orders component output: The ability to add an order, the name of the ord
 
 ## Getting Started
 
-## Launching a project from GitHub and Docker Hub
-
-This tutorial will guide you through getting your project up and running from GitHub and deploying it to a container using Docker Hub.
-
-
-## Launch the project from this repository or container from the docker hub.
-
 **This repository**
 
-1. Clone this repository to your computer `git clone https://github.com/AndriiYelieva/dzen-test-task.git`.
+1. Clone this repository to your computer `git clone https://github.com/AndriiYelieva/smart-manage-task.git`.
 2. Use `npm install` or `yarn install` to install all project dependencies.
 3. Run the project with `npm run dev` or `yarn dev`.
 4. Open a web browser and go to `http://localhost:3000` to see my application.
 
-**Docker**
-
-1. Use terminal comand`docker pull andriiyelieva/dzen-code:v1.0`  
-2. Open a project from a container with the identifier images `docker run -p 3000:3000 [your images-id]`
-
-## DEMO LINK - https://dzen-test-task.vercel.app/
+## DEMO LINK - https://smart-manage.vercel.app/

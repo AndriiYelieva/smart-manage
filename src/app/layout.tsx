@@ -1,4 +1,4 @@
-;import type { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import 'bootstrap/dist/css/bootstrap.css';
 import BootstrapClient from '@/app/components/BootstrapClient';
@@ -10,7 +10,7 @@ import style from './page.module.css';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'DzenCode test task',
+  title: 'Smart manage  is your ideal tool for effective business management.',
 }
 
 export default function RootLayout({
