@@ -23,4 +23,4 @@ In the Orders component output: The ability to add an order, the name of the ord
 3. Run the project with `npm run dev` or `yarn dev`.
 4. Open a web browser and go to `http://localhost:3000` to see my application.
 
-## DEMO LINK - https://smart-manage.vercel.app/
+## DEMO LINK - https://smart-manage-nu.vercel.app/
